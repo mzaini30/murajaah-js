@@ -1,0 +1,1 @@
+bash script/php.sh & bash script/database.sh & bash script/pug.sh

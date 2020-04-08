@@ -1,0 +1,1 @@
+var database = 'http://localhost:3000/db'
