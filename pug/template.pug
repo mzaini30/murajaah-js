@@ -1,9 +1,21 @@
 doctype html
 html
 	head
+		block judul
+			title Murajaah
 		meta(charset='utf-8')
 		meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
 		link(rel='stylesheet' href='vendor/bootstrap/css/bootstrap.min.css')
+		style
+			include:uglify-css:stylus template.stylus
+			block css
 	body 
+		.navbar.navbar-default.navbar-fixed-top
+			.container
+				.navbar-header
+					.navbar-brand Murajaah
+		block isi
 		script(src='vendor/jquery.min.js')
 		script(src='vendor/olahJson.min.js')
+		script 
+			block js
