@@ -1,0 +1,15 @@
+extends template.pug
+
+block isi
+	form.formBuatBaru
+		.form-group
+			label Username baru
+			input.form-control.daftarUsername(required)
+		.form-group
+			label Password baru
+			input.form-control.daftarPassword(required)
+		.from-group
+			input.btn.btn-success.daftarSubmit(type='submit' value='Daftar sekarang')
+
+block js
+	include:uglify-js:babel(presets=['env']) daftar.js

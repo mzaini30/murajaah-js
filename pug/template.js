@@ -1,1 +1,1 @@
-var database = 'http://localhost:3000/db'
+var database = 'https://jsonblob.com/api/77d55f96-79e7-11ea-94ef-bb3d178b400a'

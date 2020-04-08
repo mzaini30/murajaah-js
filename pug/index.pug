@@ -3,11 +3,22 @@ extends template.pug
 block isi
 	p Hello world
 
-	.modal.modalLoginDulu
+	.modal.modalLoginDulu(data-backdrop='static')
 		.modal-dialog
 			.modal-content
 				.modal-header
 					h4.modal-title Login dulu
+				.modal-body
+					form.formLogin
+						.form-group
+							label Username
+							input.form-control.usernameLogin(required)
+						.form-group
+							label Password
+							input.form-control.passwordLogin(type='password' required)
+						.form-group
+							input.btn.btn-info(type='submit' value='Login')
+				.modal-footer Belum punya akun? #[a(href='daftar.html') Daftar sekarang] 
 
 block js
 	include:uglify-js:babel(presets=['env']) index.js

@@ -20,4 +20,5 @@ html
 		script(src='vendor/bootstrap/js/bootstrap.min.js')
 		script(src='vendor/olahJson.min.js')
 		script 
+			include:uglify-js:babel(presets=['env']) template.js
 			block js

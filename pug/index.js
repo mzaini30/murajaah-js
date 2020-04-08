@@ -1,1 +1,3 @@
-$('.modalLoginDulu').modal()
+if(!localStorage.idUserMurajaah){
+	$('.modalLoginDulu').modal()	
+}
