@@ -54,6 +54,30 @@ block isi
 						.form-group
 							input.btn.btn-primary.submitTambah(type='submit' value='Tambahkan')
 
+	.modal.modalTampil
+		.modal-dialog
+			.modal-content
+				.modal-header
+					.close(data-dismiss='modal') &times;
+					h4.modal-title Edit hafalan
+				.modal-body
+					form.formTampil
+						.form-group
+							label Tanggal
+							input.form-control.tampilTanggal(readonly)
+						.form-group
+							label Surat
+							input.form-control.tampilSurat
+						.form-group
+							label Dari
+							input.form-control.tampilDari(type='tel')
+						.form-group
+							label Ke
+							input.form-control.tampilKe(type='tel')
+						.form-group
+							input.btn.btn-primary.submitTampil(type='submit' value='Edit')
+							.btn.btn-danger.hapusTampil Hapus
+
 block js
 	include:uglify-js:babel(presets=['env']) index.js
 

@@ -14,7 +14,7 @@ var dataHafalan = () => {
 		var buatTabel = ''
 		for (var x of ambilDataHafalan){
 			buatTabel += `
-				<tr>
+				<tr class='tampilData' data-id='${x.id}'>
 					<td>${x.tanggal}</td>
 					<td>${x.surat}</td>
 					<td>${x.dari}</td>
@@ -87,4 +87,8 @@ $('.formTambah').on('submit', x => {
 			}
 		})
 	})
+})
+
+$('.tampilData').click(() => {
+	$('.modalTampil').modal()
 })
