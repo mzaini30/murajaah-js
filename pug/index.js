@@ -45,3 +45,5 @@ $('.logout').click(() => {
 	localStorage.removeItem('username')
 	location.reload()
 })
+
+$('.tambahHafalan').click(() => $('.modalTambah').modal())

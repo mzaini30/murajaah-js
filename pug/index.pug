@@ -31,6 +31,13 @@ block isi
 							input.btn.btn-info(type='submit' value='Login')
 				.modal-footer Belum punya akun? #[a(href='daftar.html') Daftar sekarang] 
 
+	.modal.modalTambah
+		.modal-dialog
+			.modal-content
+				.modal-header
+					.close(data-dismiss='modal') &times;
+					h4.modal-title Tambah hafalan
+
 block js
 	include:uglify-js:babel(presets=['env']) index.js
 
@@ -40,8 +47,8 @@ block diLuarContainer
 			table.table.table-bordered
 				tbody
 					tr
-						td
-							.btn.btn-primary.tambahHafalan Tambah
+						td: .btn.btn-default(href='https://trakteer.id/mzaini30') Donasi
+						td: .btn.btn-primary.tambahHafalan Tambah
 
 block css
 	include:uglify-css:stylus index.stylus
