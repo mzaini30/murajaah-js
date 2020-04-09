@@ -1,6 +1,7 @@
-const staticFile = "dev-coffee-site-v1"
+const staticFile = "murajaah"
 const assets = [
-  "/kelinci.gif"
+  "/kelinci.gif",
+  "/"
 ]
 
 self.addEventListener("install", installEvent => {
