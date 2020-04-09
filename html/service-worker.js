@@ -5,9 +5,9 @@ const assets = [
   "index.html"
 ]
 
-self.addEventListener("install", installEvent => {
+self.addEventListener("install", function(installEvent){
   installEvent.waitUntil(
-    caches.open(staticFile).then(cache => {
+    caches.open(staticFile).then(function(cache){
       cache.addAll(assets)
     })
   )
