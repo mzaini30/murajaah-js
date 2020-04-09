@@ -7,9 +7,7 @@ var sekarang = `${tanggal}/${bulan}/${tahun}`
 var dataHafalan = () => {
 	$('.form-control').val('')
 	$('.modal').modal('hide')
-	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
-		$('.loading').addClass('sembunyi')
 		var datanya = new OlahJson(data)
 		var ambilDataHafalan = datanya.query(`murajaah?user_id=${localStorage.idUserMurajaah}`).get().reverse()
 		var buatTabel = ''
@@ -34,13 +32,11 @@ if(!localStorage.idUserMurajaah){
 }
 
 $('.formLogin').on('submit', x => {
-	$('.loading').removeClass('sembunyi')
 	x.preventDefault()
 	$.get(database, data => {
 		var dataOlah = new OlahJson(data)
 		var cariUsername = dataOlah.query(`user?username=${$('.usernameLogin').val()}&password=${btoa($('.passwordLogin').val())}`).get()
 		var adaKah = cariUsername.length
-		$('.loading').addClass('sembunyi')
 		if (adaKah > 0){
 			localStorage.setItem('idUserMurajaah', cariUsername[0].id)
 			localStorage.setItem('username', cariUsername[0].username)
@@ -63,7 +59,6 @@ $('.tambahHafalan').click(() => {
 	$('.modalTambah').modal()
 })
 $('.formTambah').on('submit', x => {
-	$('.loading').removeClass('sembunyi')
 	x.preventDefault()
 	$.get(database, data => {
 		var dataOlah = new OlahJson(data)
@@ -74,6 +69,7 @@ $('.formTambah').on('submit', x => {
 		    "ke": $('.tambahKe').val(),
 		    "user_id": Number(localStorage.idUserMurajaah)
 		}).get()
+		$('.loading').removeClass('sembunyi')
 		$.ajax({
 			url: database,
 			type: 'put',
@@ -91,9 +87,7 @@ $('.formTambah').on('submit', x => {
 
 $(document).on('click', '.tampilData', function(){
 	localStorage.setItem('idMurajaah', $(this).data('id'))
-	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
-		$('.loading').addClass('sembunyi')
 		var datanya = new OlahJson(data)
 		var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).get()
 		$('.tampilTanggal').val(ambil[0].tanggal)
@@ -106,9 +100,7 @@ $(document).on('click', '.tampilData', function(){
 
 $('.formTampil').on('submit', x => {
 	x.preventDefault()
-	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
-		$('.loading').addClass('sembunyi')
 		var datanya = new OlahJson(data)
 		var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).put({
 			"tanggal": $('.tampilTanggal').val(),
@@ -136,9 +128,7 @@ $('.formTampil').on('submit', x => {
 $('.hapusTampil').click(() => {
 	var tanyaDulu = confirm('Hapus kah?')
 	if (tanyaDulu){
-		$('.loading').removeClass('sembunyi')
 		$.get(database, data => {
-			$('.loading').addClass('sembunyi')
 			var datanya = new OlahJson(data)
 			var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).delete().get()
 			$('.loading').removeClass('sembunyi')
