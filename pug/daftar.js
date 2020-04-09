@@ -14,6 +14,7 @@ $('.formBuatBaru').on('submit', x => {
 				"username": $('.daftarUsername').val(),
 				"password": btoa($('.daftarPassword').val())
 			}).get()
+			$('.loading').removeClass('sembunyi')
 			$.ajax({
 				url: database,
 				type: 'put',
@@ -21,7 +22,10 @@ $('.formBuatBaru').on('submit', x => {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				success: () => location.href = 'index.html'
+				success: () => {
+					$('.loading').addClass('sembunyi')
+					location.href = 'index.html'
+				}
 			})
 		}
 	})
