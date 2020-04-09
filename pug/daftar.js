@@ -1,6 +1,6 @@
 $('.formBuatBaru').on('submit', x => {
-	$('.loading').removeClass('sembunyi')
 	x.preventDefault()
+	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
 		$('.loading').addClass('sembunyi')
 		var ambilData = new OlahJson(data)
