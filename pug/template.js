@@ -1,4 +1,4 @@
-var database = 'https://jsonblob.com/api/e6b31c7f-79e9-11ea-94ef-5b343d5a5bbe'
+var database = atob('aHR0cHM6Ly9qc29uYmxvYi5jb20vYXBpL2U2YjMxYzdmLTc5ZTktMTFlYS05NGVmLTViMzQzZDVhNWJiZQ==')
 
 $('.navbar-brand').click(() => {
 	$('html, body').animate({
