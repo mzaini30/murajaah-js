@@ -1,37 +1,64 @@
 {
-  "user": [{
-    "username": "zen",
-    "password": "a3VjaW5n",
-    "id": 2
-  }, {
-    "username": "Yani",
-    "password": "aGFsbw==",
-    "id": 3
-  }],
+  "user": [
+    {
+      "username": "zen",
+      "password": "a3VjaW5n",
+      "id": 2
+    },
+    {
+      "username": "Yani",
+      "password": "aGFsbw==",
+      "id": 3
+    }
+  ],
   "murajaah": [
-	  	{
-		    "id": 1,
-		    "tanggal": "2/2/2020",
-		    "surat": "Yasin",
-		    "dari": "1",
-		    "ke": "30",
-		    "id_user": 2
-		},
-	  	{
-		    "id": 2,
-		    "tanggal": "2/2/2020",
-		    "surat": "Yasin",
-		    "dari": "34",
-		    "ke": "100",
-		    "id_user": 3
-		},
-	  	{
-		    "id": 3,
-		    "tanggal": "2/2/2020",
-		    "surat": "Yasin",
-		    "dari": "4",
-		    "ke": "9",
-		    "id_user": 2
-		}
-	]
+    {
+      "id": 1,
+      "tanggal": "2/2/2020",
+      "surat": "Yasin",
+      "dari": "1",
+      "ke": "30",
+      "id_user": 2
+    },
+    {
+      "id": 2,
+      "tanggal": "2/2/2020",
+      "surat": "Yasin",
+      "dari": "34",
+      "ke": "100",
+      "id_user": 3
+    },
+    {
+      "id": 3,
+      "tanggal": "2/2/2020",
+      "surat": "Yasin",
+      "dari": "4",
+      "ke": "9",
+      "id_user": 2
+    },
+    {
+      "tanggal": "9/4/2020",
+      "surat": "Al-Mulk",
+      "dari": "1",
+      "ke": "10",
+      "id_user": 2,
+      "id": 4
+    },
+    {
+      "tanggal": "9/4/2020",
+      "surat": "Al-Mulk",
+      "dari": "11",
+      "ke": "20",
+      "id_user": 2,
+      "id": 5
+    },
+    {
+      "tanggal": "9/4/2020",
+      "surat": "Al-Mulk",
+      "dari": "20",
+      "ke": "40",
+      "id_user": 2,
+      "id": 6
+    }
+  ]
 }

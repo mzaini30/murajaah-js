@@ -64,10 +64,19 @@ $('.formTambah').on('submit', x => {
 		var dataOlah = new OlahJson(data)
 		var ambilTable = dataOlah.query('murajaah').post({
 			"tanggal": sekarang,
-		    "surat": "Yasin",
-		    "dari": "1",
-		    "ke": "30",
-		    "id_user": 2
+		    "surat": $('.tambahSurat').val(),
+		    "dari": $('.tambahDari').val(),
+		    "ke": $('.tambahKe').val(),
+		    "id_user": Number(localStorage.idUserMurajaah)
 		}).get()
+		$.ajax({
+			url: database,
+			type: 'put',
+			data: JSON.stringify(ambilTable),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			success: () => dataHafalan()
+		})
 	})
 })
