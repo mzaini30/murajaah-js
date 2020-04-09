@@ -5,6 +5,8 @@ var tahun = waktu.getFullYear()
 var sekarang = `${tanggal}/${bulan}/${tahun}`
 
 var dataHafalan = () => {
+	$('.form-control').val('')
+	$('.modal').modal('hide')
 	$.get(database, data => {
 		var datanya = new OlahJson(data)
 		var ambilDataHafalan = datanya.query(`murajaah?id_user=${localStorage.idUserMurajaah}`).get().reverse()
@@ -52,5 +54,20 @@ $('.logout').click(() => {
 	location.reload()
 })
 
-$('.tambahTanggal').val(sekarang)
-$('.tambahHafalan').click(() => $('.modalTambah').modal())
+$('.tambahHafalan').click(() => {
+	$('.tambahTanggal').val(sekarang)
+	$('.modalTambah').modal()
+})
+$('.formTambah').on('submit', x => {
+	x.preventDefault()
+	$.get(database, data => {
+		var dataOlah = new OlahJson(data)
+		var ambilTable = dataOlah.query('murajaah').post({
+			"tanggal": sekarang,
+		    "surat": "Yasin",
+		    "dari": "1",
+		    "ke": "30",
+		    "id_user": 2
+		}).get()
+	})
+})
