@@ -27,10 +27,11 @@ var dataHafalan = () => {
 		$('.usernamenya').text(localStorage.username)
 	})
 }
-dataHafalan()
 
 if(!localStorage.idUserMurajaah){
-	$('.modalLoginDulu').modal()	
+	$('.modalLoginDulu').modal()
+} else {
+	dataHafalan()
 }
 
 $('.formLogin').on('submit', x => {
@@ -55,7 +56,7 @@ $('.formLogin').on('submit', x => {
 $('.logout').click(() => {
 	localStorage.removeItem('idUserMurajaah')
 	localStorage.removeItem('username')
-	location.reload()
+	$('.modalLoginDulu').modal()
 })
 
 $('.tambahHafalan').click(() => {
