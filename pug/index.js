@@ -14,6 +14,7 @@ var dataHafalan = () => {
 			`
 		}
 		$('.datanya').html(buatTabel)
+		$('.usernamenya').text(localStorage.username)
 	})
 }
 dataHafalan()
@@ -38,8 +39,6 @@ $('.formLogin').on('submit', x => {
 		}
 	})
 })
-
-$('.usernamenya').text(localStorage.username)
 
 $('.logout').click(() => {
 	localStorage.removeItem('idUserMurajaah')
