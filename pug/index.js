@@ -65,7 +65,9 @@ $('.tambahHafalan').click(() => {
 })
 $('.formTambah').on('submit', x => {
 	x.preventDefault()
+	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
+		$('.loading').addClass('sembunyi')
 		var dataOlah = new OlahJson(data)
 		var ambilTable = dataOlah.query('murajaah').post({
 			"tanggal": sekarang,
