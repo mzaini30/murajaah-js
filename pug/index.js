@@ -5,6 +5,7 @@ var tahun = waktu.getFullYear()
 var sekarang = `${tanggal}/${bulan}/${tahun}`
 
 var dataHafalan = () => {
+	$('.loading').removeClass('sembunyi')
 	$('.form-control').val('')
 	$('.modal').modal('hide')
 	$.get(database, data => {
@@ -21,6 +22,7 @@ var dataHafalan = () => {
 				</tr>
 			`
 		}
+		$('.loading').addClass('sembunyi')
 		$('.datanya').html(buatTabel)
 		$('.usernamenya').text(localStorage.username)
 	})
@@ -32,11 +34,13 @@ if(!localStorage.idUserMurajaah){
 }
 
 $('.formLogin').on('submit', x => {
+	$('.loading').removeClass('sembunyi')
 	x.preventDefault()
 	$.get(database, data => {
 		var dataOlah = new OlahJson(data)
 		var cariUsername = dataOlah.query(`user?username=${$('.usernameLogin').val()}&password=${btoa($('.passwordLogin').val())}`).get()
 		var adaKah = cariUsername.length
+		$('.loading').addClass('sembunyi')
 		if (adaKah > 0){
 			localStorage.setItem('idUserMurajaah', cariUsername[0].id)
 			localStorage.setItem('username', cariUsername[0].username)
@@ -59,6 +63,7 @@ $('.tambahHafalan').click(() => {
 	$('.modalTambah').modal()
 })
 $('.formTambah').on('submit', x => {
+	$('.loading').removeClass('sembunyi')
 	x.preventDefault()
 	$.get(database, data => {
 		var dataOlah = new OlahJson(data)
@@ -77,6 +82,7 @@ $('.formTambah').on('submit', x => {
 				'Content-Type': 'application/json'
 			},
 			success: () => {
+				$('.loading').addClass('sembunyi')
 				dataHafalan()
 			}
 		})
