@@ -5,10 +5,11 @@ var tahun = waktu.getFullYear()
 var sekarang = `${tanggal}/${bulan}/${tahun}`
 
 var dataHafalan = () => {
-	$('.loading').removeClass('sembunyi')
 	$('.form-control').val('')
 	$('.modal').modal('hide')
+	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
+		$('.loading').addClass('sembunyi')
 		var datanya = new OlahJson(data)
 		var ambilDataHafalan = datanya.query(`murajaah?user_id=${localStorage.idUserMurajaah}`).get().reverse()
 		var buatTabel = ''
@@ -22,7 +23,6 @@ var dataHafalan = () => {
 				</tr>
 			`
 		}
-		$('.loading').addClass('sembunyi')
 		$('.datanya').html(buatTabel)
 		$('.usernamenya').text(localStorage.username)
 	})
