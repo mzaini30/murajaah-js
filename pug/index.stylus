@@ -1,0 +1,12 @@
+body
+	padding-bottom 50px
+	
+.navbar-fixed-bottom
+	.btn
+		width 100%
+	.table
+		margin-bottom 0
+		&
+		tr
+		td
+			border none !important

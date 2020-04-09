@@ -33,3 +33,15 @@ block isi
 
 block js
 	include:uglify-js:babel(presets=['env']) index.js
+
+block diLuarContainer
+	.navbar.navbar-default.navbar-fixed-bottom
+		.container
+			table.table.table-bordered
+				tbody
+					tr
+						td
+							.btn.btn-primary.tambahHafalan Tambah
+
+block css
+	include:uglify-css:stylus index.stylus
