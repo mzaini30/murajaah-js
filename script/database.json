@@ -1,29 +1,121 @@
 {
-  "user": [
+    "user": [
     {
-      "username": "zen",
-      "password": "a3VjaW5n",
-      "id": 2
+        "username": "zen",
+        "password": "a3VjaW5n",
+        "id": 2
     },
     {
-      "username": "Yani",
-      "password": "aGFsbw==",
-      "id": 3
+        "username": "Yani",
+        "password": "aGFsbw==",
+        "id": 3
     },
     {
-      "username": "halo",
-      "password": "a2FtdQ==",
-      "id": 4
-    }
-  ],
-  "murajaah": [
+        "username": "halo",
+        "password": "a2FtdQ==",
+        "id": 4
+    },
     {
-      "id": 1,
-      "tanggal": "2/2/2020",
-      "surat": "Yasin",
-      "dari": "1",
-      "ke": "30",
-      "user_id": 4
-    }
-  ]
+        "username": "aku",
+        "password": "YWt1",
+        "id": 5
+    },
+    {
+        "username": "hshshhs",
+        "password": "aGRoc2hoZA==",
+        "id": 6
+    },
+    {
+        "username": "hdhdhhd",
+        "password": "eWV5ZWdnZGdl",
+        "id": 7
+    },
+    {
+        "username": "kajskfljakf",
+        "password": "a2Fqc2Rma2pmYQ==",
+        "id": 8
+    },
+    {
+        "username": "kajsfkjaklfj",
+        "password": "amxrYWpza2xmamtsYWpm",
+        "id": 9
+    },
+    {
+        "username": "bdhshhshs",
+        "password": "aGRoc2hzaGhzaHM=",
+        "id": 10
+    }],
+    "murajaah": [
+    {
+        "id": 1,
+        "tanggal": "2/2/2020",
+        "surat": "Yasin",
+        "dari": "1",
+        "ke": "30",
+        "user_id": 4
+    },
+    {
+        "tanggal": "6/4/2020",
+        "surat": "Juz 1",
+        "dari": "1/2",
+        "ke": "1",
+        "user_id": 2,
+        "id": 3
+    },
+    {
+        "tanggal": "6/4/2020",
+        "surat": "Juz 1",
+        "dari": "1/4",
+        "ke": "3",
+        "user_id": 2,
+        "id": 4
+    },
+    {
+        "tanggal": "9/4/2020",
+        "surat": "Juz 2",
+        "dari": "",
+        "ke": "",
+        "user_id": 5,
+        "id": 5
+    },
+    {
+        "tanggal": "9/4/2020",
+        "surat": "Juz 3",
+        "dari": "1/2",
+        "ke": "1",
+        "user_id": 5,
+        "id": 6
+    },
+    {
+        "tanggal": "9/4/2020",
+        "surat": "Juz 3",
+        "dari": "1/2",
+        "ke": "2",
+        "user_id": 5,
+        "id": 7
+    },
+    {
+        "tanggal": "9/4/2020",
+        "surat": "Juz 1",
+        "dari": "1/4",
+        "ke": "4",
+        "user_id": 2,
+        "id": 8
+    },
+    {
+        "tanggal": "9/4/2020",
+        "surat": "Juz 1",
+        "dari": "1/4",
+        "ke": "1",
+        "user_id": 2,
+        "id": 9
+    },
+    {
+        "tanggal": "9/4/2020",
+        "surat": "Al-Baqarah",
+        "dari": "1",
+        "ke": "61",
+        "user_id": 2,
+        "id": 10
+    }]
 }
