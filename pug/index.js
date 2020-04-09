@@ -96,7 +96,64 @@ $(document).on('click', '.tampilData', function(){
 		$('.loading').addClass('sembunyi')
 		var datanya = new OlahJson(data)
 		var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).get()
-		console.log(ambil)
+		$('.tampilTanggal').val(ambil[0].tanggal)
+		$('.tampilSurat').val(ambil[0].surat)
+		$('.tampilDari').val(ambil[0].dari)
+		$('.tampilKe').val(ambil[0].ke)
+		$('.modalTampil').modal()
 	})
-	$('.modalTampil').modal()
+})
+
+$('.formTampil').on('submit', x => {
+	x.preventDefault()
+	$('.loading').removeClass('sembunyi')
+	$.get(database, data => {
+		$('.loading').addClass('sembunyi')
+		var datanya = new OlahJson(data)
+		var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).put({
+			"tanggal": $('.tampilTanggal').val(),
+		    "surat": $('.tampilSurat').val(),
+		    "dari": $('.tampilDari').val(),
+		    "ke": $('.tampilKe').val(),
+		    "user_id": Number(localStorage.idUserMurajaah)
+		}).get()
+		$('.loading').removeClass('sembunyi')
+		$.ajax({
+			url: database,
+			type: 'put',
+			data: JSON.stringify(ambil),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			success: () => {
+				$('.loading').addClass('sembunyi')
+				dataHafalan()
+			}
+		})
+	})
+})
+
+$('.hapusTampil').click(() => {
+	var tanyaDulu = confirm('Hapus kah?')
+	if (tanyaDulu){
+		$('.loading').removeClass('sembunyi')
+		$.get(database, data => {
+			$('.loading').addClass('sembunyi')
+			var datanya = new OlahJson(data)
+			var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).delete().get()
+			$('.loading').removeClass('sembunyi')
+			$.ajax({
+				url: database,
+				type: 'put',
+				data: JSON.stringify(ambil),
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				success: () => {
+					$('.loading').addClass('sembunyi')
+					dataHafalan()
+				}
+			})
+		})
+	}
 })
