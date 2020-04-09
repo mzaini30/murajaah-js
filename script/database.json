@@ -8,12 +8,30 @@
     "password": "aGFsbw==",
     "id": 3
   }],
-  "murajaah": [{
-    "id": 1,
-    "tanggal": "2/2/2020",
-    "surat": "Yasin",
-    "dari": "1",
-    "ke": "30",
-    "id_user": 2
-  }]
+  "murajaah": [
+	  	{
+		    "id": 1,
+		    "tanggal": "2/2/2020",
+		    "surat": "Yasin",
+		    "dari": "1",
+		    "ke": "30",
+		    "id_user": 2
+		},
+	  	{
+		    "id": 2,
+		    "tanggal": "2/2/2020",
+		    "surat": "Yasin",
+		    "dari": "34",
+		    "ke": "100",
+		    "id_user": 3
+		},
+	  	{
+		    "id": 3,
+		    "tanggal": "2/2/2020",
+		    "surat": "Yasin",
+		    "dari": "4",
+		    "ke": "9",
+		    "id_user": 2
+		},
+	]
 }
