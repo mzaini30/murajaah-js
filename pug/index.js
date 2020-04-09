@@ -7,17 +7,19 @@ var sekarang = `${tanggal}/${bulan}/${tahun}`
 var dataHafalan = () => {
 	$('.form-control').val('')
 	$('.modal').modal('hide')
+	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
+		$('.loading').addClass('sembunyi')
 		var datanya = new OlahJson(data)
 		var ambilDataHafalan = datanya.query(`murajaah?user_id=${localStorage.idUserMurajaah}`).get().reverse()
 		var buatTabel = ''
 		for (var x of ambilDataHafalan){
 			buatTabel += `
 				<tr class='tampilData' data-id='${x.id}'>
-					<td>${x.tanggal}</td>
-					<td>${x.surat}</td>
-					<td>${x.dari}</td>
-					<td>${x.ke}</td>
+					<td class='bagianTanggal'>${x.tanggal}</td>
+					<td class='bagianSurat'>${x.surat}</td>
+					<td class='bagianDari'>${x.dari}</td>
+					<td class='bagianKe'>${x.ke}</td>
 				</tr>
 			`
 		}
@@ -89,15 +91,11 @@ $('.formTambah').on('submit', x => {
 
 $(document).on('click', '.tampilData', function(){
 	localStorage.setItem('idMurajaah', $(this).data('id'))
-	$.get(database, data => {
-		var datanya = new OlahJson(data)
-		var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).get()
-		$('.tampilTanggal').val(ambil[0].tanggal)
-		$('.tampilSurat').val(ambil[0].surat)
-		$('.tampilDari').val(ambil[0].dari)
-		$('.tampilKe').val(ambil[0].ke)
-		$('.modalTampil').modal()
-	})
+	$('.tampilTanggal').val($(this).find('.bagianTanggal').html())
+	$('.tampilSurat').val($(this).find('.bagianSurat').html())
+	$('.tampilDari').val($(this).find('.bagianDari').html())
+	$('.tampilKe').val($(this).find('.bagianKe').html())
+	$('.modalTampil').modal()
 })
 
 $('.formTampil').on('submit', x => {
