@@ -33,7 +33,9 @@ if(!localStorage.idUserMurajaah){
 
 $('.formLogin').on('submit', x => {
 	x.preventDefault()
+	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
+		$('.loading').addClass('sembunyi')
 		var dataOlah = new OlahJson(data)
 		var cariUsername = dataOlah.query(`user?username=${$('.usernameLogin').val()}&password=${btoa($('.passwordLogin').val())}`).get()
 		var adaKah = cariUsername.length
