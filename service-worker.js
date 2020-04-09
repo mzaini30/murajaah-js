@@ -1,7 +1,8 @@
 const staticFile = "murajaah"
 const assets = [
   "/kelinci.gif",
-  "/"
+  "/",
+  "index.html"
 ]
 
 self.addEventListener("install", installEvent => {
