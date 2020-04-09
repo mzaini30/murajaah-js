@@ -9,7 +9,7 @@ var dataHafalan = () => {
 	$('.modal').modal('hide')
 	$.get(database, data => {
 		var datanya = new OlahJson(data)
-		var ambilDataHafalan = datanya.query(`murajaah?id_user=${localStorage.idUserMurajaah}`).get().reverse()
+		var ambilDataHafalan = datanya.query(`murajaah?user_id=${localStorage.idUserMurajaah}`).get().reverse()
 		var buatTabel = ''
 		for (var x of ambilDataHafalan){
 			buatTabel += `
@@ -67,7 +67,7 @@ $('.formTambah').on('submit', x => {
 		    "surat": $('.tambahSurat').val(),
 		    "dari": $('.tambahDari').val(),
 		    "ke": $('.tambahKe').val(),
-		    "id_user": Number(localStorage.idUserMurajaah)
+		    "user_id": Number(localStorage.idUserMurajaah)
 		}).get()
 		$.ajax({
 			url: database,
@@ -76,7 +76,9 @@ $('.formTambah').on('submit', x => {
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			success: () => dataHafalan()
+			success: () => {
+				dataHafalan()
+			}
 		})
 	})
 })
