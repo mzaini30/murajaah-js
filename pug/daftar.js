@@ -10,12 +10,15 @@ $('.formBuatBaru').on('submit', x => {
 			var inputData = new OlahJson(data)
 			var dataBaru = inputData.query('user').post({
 				"username": $('.daftarUsername').val(),
-				"password": btoa($('.daftarPassword').val())
+				"password": atob($('.daftarPassword').val())
 			}).get()
 			$.ajax({
 				url: database,
 				type: 'put',
 				data: dataBaru,
+				headers: {
+					'Content-Type': 'application/json'
+				},
 				success: () => location.href = 'index.html'
 			})
 		}
