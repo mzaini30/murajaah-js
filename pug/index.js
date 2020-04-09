@@ -129,7 +129,9 @@ $('.formTampil').on('submit', x => {
 $('.hapusTampil').click(() => {
 	var tanyaDulu = confirm('Hapus kah?')
 	if (tanyaDulu){
+		$('.loading').removeClass('sembunyi')
 		$.get(database, data => {
+			$('.loading').addClass('sembunyi')
 			var datanya = new OlahJson(data)
 			var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).delete().get()
 			$('.loading').removeClass('sembunyi')
