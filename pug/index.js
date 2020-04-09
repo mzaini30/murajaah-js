@@ -52,4 +52,5 @@ $('.logout').click(() => {
 	location.reload()
 })
 
+$('.tambahTanggal').val(sekarang)
 $('.tambahHafalan').click(() => $('.modalTambah').modal())
