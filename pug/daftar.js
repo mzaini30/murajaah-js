@@ -2,10 +2,10 @@ $('.formBuatBaru').on('submit', x => {
 	$('.loading').removeClass('sembunyi')
 	x.preventDefault()
 	$.get(database, data => {
+		$('.loading').addClass('sembunyi')
 		var ambilData = new OlahJson(data)
 		var usernameYangSudahAda = ambilData.query(`user?username=${$('.daftarUsername').val()}`).get()
 		var adaKah = usernameYangSudahAda.length
-		$('.loading').addClass('sembunyi')
 		if (adaKah > 0){
 			alert('Username sudah ada. Coba yang lain')
 		} else {
