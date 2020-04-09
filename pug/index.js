@@ -89,6 +89,14 @@ $('.formTambah').on('submit', x => {
 	})
 })
 
-$('.tampilData').click(() => {
+$(document).on('click', '.tampilData', function(){
+	localStorage.setItem('idMurajaah', $(this).data('id'))
+	$('.loading').removeClass('sembunyi')
+	$.get(database, data => {
+		$('.loading').addClass('sembunyi')
+		var datanya = new OlahJson(data)
+		var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).get()
+		console.log(ambil)
+	})
 	$('.modalTampil').modal()
 })

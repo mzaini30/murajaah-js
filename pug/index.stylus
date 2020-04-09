@@ -10,3 +10,6 @@ body
 		tr
 		td
 			border none !important
+			
+.tampilData
+	cursor pointer
