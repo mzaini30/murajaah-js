@@ -1,11 +1,19 @@
 {
   "user": [{
-    "id": 1,
-    "username": "hahahahahahha",
-    "password": "alkflajflkajf"
-  }, {
     "username": "zen",
     "password": "a3VjaW5n",
     "id": 2
+  }, {
+    "username": "Yani",
+    "password": "aGFsbw==",
+    "id": 3
+  }],
+  "murajaah": [{
+    "id": 1,
+    "tanggal": "2/2/2020",
+    "surat": "Yasin",
+    "dari": "1",
+    "ke": "30",
+    "id_user": 2
   }]
 }

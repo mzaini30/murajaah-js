@@ -1,7 +1,18 @@
 extends template.pug
 
 block isi
-	p Hello world
+	.alert.alert-info 
+		.close.logout &times;
+		| Halo #[span.usernamenya]
+
+	table.table.table-bordered
+		thead
+			tr
+				th Tanggal
+				th Surat
+				th Dari
+				th Ke
+		tbody.datanya
 
 	.modal.modalLoginDulu(data-backdrop='static')
 		.modal-dialog

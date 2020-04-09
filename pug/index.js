@@ -17,3 +17,11 @@ $('.formLogin').on('submit', x => {
 		}
 	})
 })
+
+$('.usernamenya').text(localStorage.username)
+
+$('.logout').click(() => {
+	localStorage.removeItem('idUserMurajaah')
+	localStorage.removeItem('username')
+	location.reload()
+})
