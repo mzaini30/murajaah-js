@@ -1,3 +1,9 @@
+var waktu = new Date()
+var tanggal = waktu.getDate()
+var bulan = waktu.getMonth() + 1
+var tahun = waktu.getFullYear()
+var sekarang = `${tanggal}/${bulan}/${tahun}`
+
 var dataHafalan = () => {
 	$.get(database, data => {
 		var datanya = new OlahJson(data)

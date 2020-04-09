@@ -37,6 +37,22 @@ block isi
 				.modal-header
 					.close(data-dismiss='modal') &times;
 					h4.modal-title Tambah hafalan
+				.modal-body
+					form.formTambah
+						.form-group
+							label Tanggal
+							input.form-control.tambahTanggal(readonly)
+						.form-group
+							label Surat
+							input.form-control.tambahSurat
+						.form-group
+							label Dari
+							input.form-control.tambahDari(type='tel')
+						.form-group
+							label Ke
+							input.form-control.tambahKe(type='tel')
+						.form-group
+							input.btn.btn-primary(type='submit' value='Tambahkan')
 
 block js
 	include:uglify-js:babel(presets=['env']) index.js
