@@ -103,7 +103,9 @@ $(document).on('click', '.tampilData', function(){
 
 $('.formTampil').on('submit', x => {
 	x.preventDefault()
+	$('.loading').removeClass('sembunyi')
 	$.get(database, data => {
+		$('.loading').addClass('sembunyi')
 		var datanya = new OlahJson(data)
 		var ambil = datanya.query(`murajaah/${localStorage.idMurajaah}`).put({
 			"tanggal": $('.tampilTanggal').val(),
