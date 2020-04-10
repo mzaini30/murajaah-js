@@ -8,7 +8,7 @@ $('.navbar-brand').click(() => {
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js', {
+    navigator.serviceWorker.register('/service-worker-v2.js', {
         scope: '.' // <--- THIS BIT IS REQUIRED
     }).then(function(registration) {
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
