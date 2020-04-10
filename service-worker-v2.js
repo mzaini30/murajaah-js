@@ -71,7 +71,24 @@
     t(t.s = 340)
 }({
     340: function(e, n) {
-        var t = ["/css/main.css", "/index.bundle.js", "/page.bundle.js", "/icon.png", "/img/logo.svg", "/img/placeholder.svg", "/img/placeholder-sqr.svg", "/manifest.json"];
+        var t = [
+          "/kelinci.gif",
+          "/",
+          "/index.html",
+          "/vendor/bootstrap/css/bootstrap.min.css",
+          "/vendor/jquery.min.js",
+          "/vendor/bootstrap/js/bootstrap.min.js",
+          "/vendor/olahJson.min.js",
+          "/manifest.json",
+          "/icon/72.png",
+          "/icon/96.png",
+          "/icon/128.png",
+          "/icon/144.png",
+          "/icon/152.png",
+          "/icon/192.png",
+          "/icon/384.png",
+          "/icon/512.png"
+        ];
         self.addEventListener("install", (function(e) {
             e.waitUntil(caches.open("murajaah-v2").then((function(e) {
                 return e.addAll(t)
