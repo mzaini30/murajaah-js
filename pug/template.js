@@ -7,12 +7,13 @@ $('.navbar-brand').click(() => {
 })
 
 if ('serviceWorker' in navigator) {
-	console.log("Will the service worker register?");
-	navigator.serviceWorker.register('/service-worker.js', {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js', {
         scope: '.' // <--- THIS BIT IS REQUIRED
-    }).then(function(reg){
-		console.log("Yes, it did.");
-	}).catch(function(err) {
-		console.log("No it didn't. This happened: ", err)
-	});
+    }).then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
 }
