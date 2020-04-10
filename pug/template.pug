@@ -19,7 +19,7 @@ html
 		meta(name='theme-color' content='#db4938')
 
 
-		link(rel='stylesheet' href='vendor/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/vendor/bootstrap/css/bootstrap.min.css')
 		style
 			include:uglify-css:stylus template.stylus
 			block css
@@ -32,10 +32,10 @@ html
 			block isi
 		block diLuarContainer
 		.loading.sembunyi
-			img.kelinci(src='kelinci.gif')
-		script(src='vendor/jquery.min.js')
-		script(src='vendor/bootstrap/js/bootstrap.min.js')
-		script(src='vendor/olahJson.min.js')
+			img.kelinci(src='/kelinci.gif')
+		script(src='/vendor/jquery.min.js')
+		script(src='/vendor/bootstrap/js/bootstrap.min.js')
+		script(src='/vendor/olahJson.min.js')
 		script 
 			include:uglify-js:babel(presets=['env']) template.js
 			block js
