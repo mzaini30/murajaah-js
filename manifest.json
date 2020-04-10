@@ -2,7 +2,6 @@
     "name": "Murajaah",
     "short_name": "Murajaah",
     "start_url": "/",
-    "scope": "/",
     "display": "standalone",
     "background_color": "#fdfdfd",
     "theme_color": "#db4938",
