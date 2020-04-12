@@ -87,7 +87,8 @@
           "/icon/152.png",
           "/icon/192.png",
           "/icon/384.png",
-          "/icon/512.png"
+          "/icon/512.png",
+          "/favicon.ico"
         ];
         self.addEventListener("install", (function(e) {
             e.waitUntil(caches.open("murajaah-v2").then((function(e) {
